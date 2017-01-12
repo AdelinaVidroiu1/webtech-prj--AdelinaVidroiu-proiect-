@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<!--Jquery JS File-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    
+    <!--Bootstrap CSS file-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!--Bootstrap JS file-->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Custom JS File-->
+    <script type="text/javascript" src="js/script.js"></script>
+    
+    <!--Custom CSS file-->
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    
+</head>
+
+<body>
+    <!--Content Section-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Pharmix </h1>
+            </div>
+        </div>
+
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="/">Acasa</a></li>
+            <li role="presentation" class="active"><a href="medicament.html">Medicamente</a></li>
+            <li role="presentation" class="active"><a href="naturist.html">Farmacie naturista</a></li>
+            <li role="presentation" class="active"><a href="frumusete.html">Frumusete</a></li>
+            <li role="presentation" class="active"><a href="desprenoi.html">Despre noi</a></li>
+        </ul>
+       
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">Adauga</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="records_content">
+                    <br/>
+                    <h3>Farmacisti</h3>
+                    <table id="druggists" class="table table-bordered table-striped">
+                        <tr>
+                            <th>ID.</th>
+                            <th>Nume</th>
+                            <th>Prenume</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Update</th>
+                            <th>Exclude</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Content Section-->
+    <!--Bootstrap Modals-->
+    <!--Modal -Add New Druggist-->
+    <div class="modal fade" id="add_new_record_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times; </span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Druggist</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="record_form">
+                        <input type="hidden" name="id" id="id" />
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Name" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="forename">Forename</label>
+                            <input name="forename" type="text" id="forename" placeholder="Forename" class="form-control" />
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input name="phone" type="text" id="phone" placeholder="Phone" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input name="email" type="text" id="email" placeholder="Email" class="form-control" />
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveRecord()">Save record</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//Modal-->
+</body>
+
+</html>
